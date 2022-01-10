@@ -1,0 +1,18 @@
+.navbar {
+    display: flex;
+    background-color: rgb(17, 116, 245);
+    padding: 4px 48px;
+}
+
+.navbar-item {
+    color: white;
+    font-size: 18px;
+    padding: 16px;
+    text-decoration: none;
+    transition: background-color 300ms ease;
+    border-radius: 5px;
+}
+
+.navbar-item:hover {
+    background-color: rgb(16, 95, 199);
+}

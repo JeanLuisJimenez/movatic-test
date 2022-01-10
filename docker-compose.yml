@@ -1,0 +1,12 @@
+version: '1.0'
+
+services:
+  react-web:
+    build: ./web-page-test
+    ports:
+      - 3000:3000
+  
+  api:
+    build: ./api
+    ports:
+      - 5000:5000
