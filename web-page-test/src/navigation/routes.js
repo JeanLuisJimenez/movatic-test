@@ -1,7 +1,7 @@
 import Home from "./screens/Home";
 import StationReport from "./screens/StatusReport";
 
-export default [
+const routes = [
     {
         name: "Home",
         path: "/",
@@ -13,4 +13,6 @@ export default [
         screen: <StationReport/>,
         hide: true
     }
-]
+];
+
+export default routes;

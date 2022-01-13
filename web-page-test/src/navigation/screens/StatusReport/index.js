@@ -6,8 +6,8 @@ import CardContainer from "../../../components/cardContainer";
 function StationReport() {
     const [cards, setCards] = useState([])
     const [name, setName] = useState('')
-    const { id } = useParams()
-
+    const [id, setId] = useState(useParams())
+    
     useEffect(() => {
         getStationDetails(id).then(res => {
             const cards = [

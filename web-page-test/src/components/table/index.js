@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import './index.css'
 
-function Table({ content, headers }) {
+function Table({ content, headers, initial }) {
     const nav = useNavigate()
 
     return <div className="table-container">
@@ -13,13 +13,14 @@ function Table({ content, headers }) {
                 </tr>
             </thead>
 
-            {content.map((row, index) => (
-                <tbody key={`row-${index}`} className="table-row" onClick={() => nav(`/${row.station_id}`)}>
-                    <tr>
-                        <td className="table-cell">{index}</td>
-                        {headers.map((header, indexCell) => <td key={`row-${index}cell-${indexCell}`} className="table-cell">{row[header.key]}</td>)}
+            <tbody>
+                {content.map((row, index) => (
+                    <tr key={`row-${index}`} className="table-row" onClick={() => nav(`/${row.station_id}`)}>
+                        <td className="table-cell">{initial + (index + 1)}</td>
+                        {headers.map((header, indexCell) => <td key={`row-${index}-cell-${indexCell}`} className="table-cell">{row[header.key]}</td>)}
                     </tr>
-                </tbody>))}
+                ))}
+            </tbody>
         </table>
     </div>
 }

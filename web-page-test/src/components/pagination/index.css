@@ -1,0 +1,29 @@
+.pagination {
+    margin: 16px auto;
+    height: 32px;
+    display: flex;
+}
+
+.pagination-numbers {
+    margin: auto 4px;
+    text-decoration: none;
+    color: black;
+}
+
+.pagination-numbers:hover,
+.pagination-numbers.current {
+    text-decoration: underline;
+}
+
+.pagination-button {
+    margin: 0 8px;
+    background-color: rgb(17, 116, 245);
+    color: white;
+    padding: 0 12px;
+    border: none;
+    border-radius: 3px;
+}
+
+.pagination-button:disabled {
+    background-color: rgb(172, 172, 172);
+}

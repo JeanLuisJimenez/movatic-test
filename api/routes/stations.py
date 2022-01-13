@@ -1,9 +1,20 @@
 from flask_restful import Resource
+from flask import request
 from requests import get as getRequest
 
 class Stations(Resource):
     def get(self):
+        nextPage = int(request.args.get('next') or 1)
+        step = int(request.args.get('step') or -1)
+
+        if nextPage and step:
+            return getRequest("https://gbfs.bcycle.com/bcycle_madison/station_information.json").json()["data"]["stations"][(nextPage-1)*step:nextPage*step]
+
         return getRequest("https://gbfs.bcycle.com/bcycle_madison/station_information.json").json()["data"]["stations"]
+
+class Count(Resource):
+    def get(self):
+        return len(getRequest("https://gbfs.bcycle.com/bcycle_madison/station_information.json").json()["data"]["stations"])
 
 class Station(Resource):
     def get(self, station_id):

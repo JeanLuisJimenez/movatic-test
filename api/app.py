@@ -12,4 +12,5 @@ if __name__ == "__main__":
   app.run(debug=True)
 
 api.add_resource(stations.Stations, '/stations/')
+api.add_resource(stations.Count, '/stations/count')
 api.add_resource(stations.Station, '/stations/<station_id>')
